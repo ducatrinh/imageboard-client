@@ -9,12 +9,15 @@ class ListContainer extends React.Component {
     }
 
     render() {
-        return <List images={this.props.images} />
+        return <List images={this.props.images} user={this.props.user} />
     }
 }
 
 function mapStateToProps(state) {
-    return { images: state.images }
+    return { 
+        images: state.images,
+        user: state.user
+    }
 }
 
 const mapDispatchToProps = { getImages }

@@ -1,13 +1,14 @@
 import * as React from 'react'
 import CreateFormContainer from './CreateFormContainer';
+import LoginFormContainer from './LoginFormContainer';
 
 export default function List(props) {
-    const { images } = props
+    const { images, user } = props
 
     return (
         <div>
-            {!images && 'Loading images...'}
-            {images && <CreateFormContainer />}
+            {!user && <LoginFormContainer />}
+            {user && <CreateFormContainer />}
             {images && images.map(image => 
                 <div key={image.title}>
                     <h3>{image.title}</h3>
